@@ -1,0 +1,96 @@
+.auth-screen {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(34, 211, 238, 0.12), transparent 54%),
+    var(--bg);
+}
+
+.auth-panel {
+  width: min(100%, 400px);
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: rgba(10, 14, 20, 0.94);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.auth-eyebrow {
+  margin: 0 0 12px;
+  color: var(--neon-cyan);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+
+.auth-panel h1 {
+  margin: 0 0 26px;
+  font-size: 1.8rem;
+}
+
+.auth-form {
+  display: grid;
+  gap: 12px;
+}
+
+.auth-form label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.auth-form input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: rgba(13, 20, 32, 0.9);
+  color: var(--text);
+  font: inherit;
+}
+
+.auth-form input:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+.auth-form .btn {
+  min-height: 46px;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+.auth-form .btn:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.auth-error {
+  margin: 0;
+  color: #fca5a5;
+  font-size: 0.9rem;
+}
+
+.auth-signout {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.auth-signout:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .auth-panel {
+    padding: 24px;
+  }
+}

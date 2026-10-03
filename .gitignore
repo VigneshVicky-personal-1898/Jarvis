@@ -1,0 +1,13 @@
+# AI-ASSISTED: Cursor
+# PROMPT: Ignore local .env with secrets
+# ACCEPTED-BY: vignesh
+
+.env
+data/rag/chroma/
+.venv/
+__pycache__/
+*.pyc
+frontend/node_modules/
+frontend/dist/
+.DS_Store
+*.log

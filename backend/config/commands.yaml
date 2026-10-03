@@ -1,0 +1,313 @@
+# AI-ASSISTED: Cursor
+# PROMPT: RAYA-only wake words and YAML command triggers
+# ACCEPTED-BY: vignesh
+
+wake_words:
+  - "hey raya"
+  - "raya"
+  - "hey raya da"
+  - "raya da"
+
+commands:
+  - id: greet
+    triggers:
+      - "hey raya"
+      - "raya"
+      - "hello raya"
+      - "hi raya"
+      - "hello"
+      - "hi"
+      - "hey"
+      - "good morning raya"
+      - "good evening raya"
+      - "vanakkam"
+      - "vanakam"
+      - "vanakkam raya"
+      - "வணக்கம்"
+      - "வணக்கம் raya"
+    response: "Hello. I am RAYA, at your service."
+    action: none
+
+  - id: greet_tamil
+    triggers:
+      - "epdi iruka"
+      - "epdi irukeenga"
+    response: "நான் நன்றாக இருக்கேன். RAYA ready. எப்படி help பண்றது?"
+    action: none
+
+  - id: time
+    triggers:
+      - "what time is it"
+      - "tell me the time"
+      - "current time"
+      - "time enna"
+      - "eppo time"
+      - "ippo time enna"
+      - "நேரம் என்ன"
+      - "என்ன நேரம்"
+    action: time
+
+  - id: date
+    triggers:
+      - "what is the date"
+      - "what's the date"
+      - "tell me the date"
+      - "today's date"
+      - "date enna"
+      - "inniku date enna"
+      - "இன்றைய தேதி"
+      - "தேதி என்ன"
+    action: date
+
+  - id: system_status
+    triggers:
+      - "system status"
+      - "how is the system"
+      - "cpu and memory"
+      - "system status paaru"
+      - "cpu memory enna"
+      - "கணினி நிலை"
+    action: system_status
+
+  - id: open_browser
+    triggers:
+      - "open browser"
+      - "launch browser"
+      - "open chrome"
+      - "launch chrome"
+      - "browser open pannu"
+      - "chrome open pannu"
+      - "browser thir"
+      - "chrome thir"
+    action: open_app
+    params:
+      app: chrome
+
+  - id: open_terminal
+    triggers:
+      - "open terminal"
+      - "launch terminal"
+      - "terminal open pannu"
+    action: open_app
+    params:
+      app: terminal
+
+  - id: open_vscode
+    triggers:
+      - "open code"
+      - "open vscode"
+      - "open visual studio code"
+      - "vscode open pannu"
+    action: open_app
+    params:
+      app: vscode
+
+  - id: search_web
+    triggers:
+      - "search for {query}"
+      - "google {query}"
+      - "google search {query}"
+      - "look up {query}"
+      - "search pannu {query}"
+    action: web_search
+
+  - id: google_search
+    triggers:
+      - "search google for {query}"
+      - "google search for {query}"
+      - "look up on google {query}"
+    action: google_search
+
+  - id: open_url
+    triggers:
+      - "open website {url}"
+      - "go to {url}"
+      - "navigate to {url}"
+    action: open_url
+
+  - id: list_commands
+    triggers:
+      - "what can you do"
+      - "list commands"
+      - "help"
+      - "show commands"
+      - "help venum"
+      - "udhavi"
+      - "uthavi"
+      - "enna panna mudiyum"
+      - "உதவி"
+      - "கட்டளைகள்"
+      - "என்ன செய்ய முடியும்"
+    action: list_commands
+
+  - id: list_projects
+    triggers:
+      - "list connected projects"
+      - "connected projects list"
+      - "enna projects connect panniruku"
+    action: list_connected_projects
+
+  - id: analyze_raya
+    triggers:
+      - "analyze raya project"
+      - "analyze the codebase"
+      - "code analyze pannu"
+      - "project structure paaru"
+      - "raya project analyze pannu"
+    action: analyze_project
+    params:
+      project: raya
+
+  - id: shutdown_listen
+    triggers:
+      - "stop listening"
+      - "go to sleep raya"
+      - "sleep raya"
+      - "sleep pannu"
+      - "rest pannu raya"
+    action: sleep
+    response: "Going to sleep. Say hey RAYA when you need me."
+
+  - id: volume_up
+    triggers:
+      - "volume up"
+      - "increase volume"
+      - "louder"
+      - "sound konjam increase"
+    action: volume
+    params:
+      direction: up
+
+  - id: volume_down
+    triggers:
+      - "volume down"
+      - "decrease volume"
+      - "quieter"
+      - "sound konjam decrease"
+    action: volume
+    params:
+      direction: down
+
+  - id: mute
+    triggers:
+      - "mute"
+      - "mute volume"
+      - "sound mute pannu"
+    action: volume
+    params:
+      direction: mute
+
+  - id: latest_test_plan_results
+    triggers:
+      - "show me the latest test plan results"
+      - "latest test plan results"
+      - "recent test plan results"
+      - "latest test plan result kaatu"
+      - "test plan result latest kaatu"
+      - "சமீப test plan முடிவுகள்"
+      - "சமீபத்திய test plan முடிவுகள்"
+    action: qe_latest_results
+
+  - id: latest_results
+    triggers:
+      - "show me the latest results"
+      - "show me the latest result"
+      - "latest result in qe engine"
+      - "latest results in qe engine"
+      - "show latest results"
+      - "show latest result"
+      - "latest results"
+      - "latest result"
+      - "recent results"
+      - "show me results"
+      - "qe engine latest result"
+      - "qe engine latest results"
+      - "latest result kaatu"
+      - "result kaatu"
+      - "results kaatu"
+      - "mudivu kaatu"
+      - "samipa result kaatu"
+      - "சமீபத்திய முடிவுகள்"
+      - "சமீப முடிவு"
+      - "முடிவுகள் காட்டு"
+    action: qe_latest_results
+
+  - id: raya_activity
+    triggers:
+      - "recent activity"
+      - "what did you last do"
+      - "show recent activity"
+      - "last activity enna"
+    action: raya_recent_activity
+
+  - id: qe_status
+    triggers:
+      - "qe status"
+      - "qe engine status"
+      - "workflow360 status"
+      - "check qe engine"
+      - "qe status paaru"
+      - "qe engine connect aah"
+      - "qe engine நிலை"
+      - "workflow360 நிலை"
+    action: qe_projects_status
+
+  - id: qe_list_tools
+    triggers:
+      - "list qe mcp tools"
+      - "list mcp tools"
+      - "what mcp tools are available"
+      - "mcp tools list pannu"
+    action: qe_list_mcp_tools
+
+  - id: qe_regression
+    triggers:
+      - "run workflow360 regression"
+      - "run qe regression"
+      - "run regression suite"
+      - "regression run pannu"
+      - "workflow360 regression pannu"
+    action: qe_regression
+    params:
+      suite: workflow360
+
+  - id: rag_sync
+    triggers:
+      - "sync knowledge base"
+      - "reindex documents"
+      - "rag sync"
+      - "index my documents"
+    action: rag_sync
+
+  - id: rag_status
+    triggers:
+      - "rag status"
+      - "knowledge base status"
+    action: rag_status
+
+  - id: qe_agent
+    triggers:
+      - "ask qe engine {command}"
+      - "qe engine {command}"
+      - "run in qe {command}"
+      - "qe la {command} pannu"
+      - "qe engine la {command}"
+    action: qe_agent_command
+
+apps:
+  chrome:
+    linux: "google-chrome || google-chrome-stable || chromium-browser || xdg-open https://google.com"
+    darwin: "open -a 'Google Chrome' || open -a Safari"
+    win32: "start chrome"
+  browser:
+    linux: "xdg-open https://google.com"
+    darwin: "open -a Safari"
+    win32: "start https://google.com"
+  terminal:
+    linux: "x-terminal-emulator || gnome-terminal || konsole"
+    darwin: "open -a Terminal"
+    win32: "start cmd"
+  vscode:
+    linux: "code"
+    darwin: "open -a 'Visual Studio Code'"
+    win32: "code"

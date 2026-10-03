@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: raya
+    runtime: docker
+    region: singapore
+    plan: 1c-2g
+    autoDeployTrigger: commit
+    healthCheckPath: /api/auth/session
+    disk:
+      name: raya-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: RAYA_CLOUD_MODE
+        value: "true"
+      - key: RAYA_AUTH_ENABLED
+        value: "true"
+      - key: RAYA_ACCESS_PASSWORD
+        sync: false
+      - key: RAYA_SESSION_SECRET
+        generateValue: true
+      - key: RAYA_SESSION_MAX_AGE
+        value: "604800"
+      - key: LLM_PROVIDER
+        value: groq
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_BASE_URL
+        value: https://api.groq.com/openai/v1
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-20b
+      - key: RAYA_RAG_ENABLED
+        value: "false"
+      - key: RAYA_DEBUG
+        value: "false"
