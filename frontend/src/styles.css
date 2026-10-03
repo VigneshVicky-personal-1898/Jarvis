@@ -66,7 +66,7 @@ body {
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.35;
-  animation: aurora-drift 18s var(--ease-smooth) infinite alternate;
+  animation: none;
 }
 
 .scene-aurora--cyan {
@@ -100,7 +100,7 @@ body {
     linear-gradient(90deg, rgba(232, 121, 249, 0.08) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: linear-gradient(to top, black 20%, transparent 85%);
-  animation: grid-scroll 12s linear infinite;
+  animation: none;
 }
 
 .scene-vignette {
@@ -330,7 +330,7 @@ body {
 .header-mic-btn--active {
   border-color: rgba(52, 211, 153, 0.65);
   color: #6ee7b7;
-  animation: header-mic-glow 1.6s ease-in-out infinite;
+  animation: none;
 }
 
 .header-mic-btn-ring {
@@ -343,12 +343,12 @@ body {
 
 .header-mic-btn--active .header-mic-btn-ring {
   border-color: rgba(52, 211, 153, 0.45);
-  animation: header-mic-ring 1.4s ease-out infinite;
+  animation: none;
 }
 
 .header-mic-icon-wave {
   opacity: 0.35;
-  animation: header-mic-wave 1.2s ease-in-out infinite;
+  animation: none;
 }
 
 @keyframes header-mic-glow {
@@ -1325,7 +1325,7 @@ body {
 .raya-status--listening .raya-status-dot,
 .raya-status--processing .raya-status-dot,
 .raya-status--thinking .raya-status-dot {
-  animation: badge-pulse 1s ease-in-out infinite;
+  animation: none;
 }
 
 .raya-status--waiting_confirmation .raya-status-dot {
@@ -1423,7 +1423,7 @@ body {
 .agent-activity-phase--listening {
   border-color: rgba(232, 168, 56, 0.45);
   color: var(--accent);
-  animation: agent-phase-pulse 1.4s ease-in-out infinite;
+  animation: none;
 }
 
 .agent-activity-phase--completed {
